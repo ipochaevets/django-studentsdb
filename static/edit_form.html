@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="uk" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <meta charset="UTF-8"/>
+    <title>Сервіс обліку студентів</title>
+    <meta name="description" value="Система Обліку Студентів Навчального Закладу"/>
+    <!-- Include Styles -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+
+<body>
+    <!-- Start Container -->
+    <div class="container">
+        <!-- Start Main Page Content -->
+        <div class="row" id="content-columns">
+            <div class="col-xs-12" id="content-column">
+                <h2>Форма редагування Студента</h2>
+                <!-- Start Edit Form -->
+                <form class="form-horizontal edit-form">
+                    <div class="form-group">
+                        <label for="inputName" class="col-sm-2 control-label">Ім'я*</label>
+                        <div class="col-sm-3"><input class="form-control" id="inputName" type="text" value="Іван" /></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputSname" class="col-sm-2 control-label">По-батькові</label>
+                        <div class="col-sm-3"><input class="form-control" id="inputSname" type="text" value="Олександрович" /></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputFname" class="col-sm-2 control-label">Прізвище*</label>
+                        <div class="col-sm-3"><input class="form-control" id="inputFname" type="text" value="Почаєвець" /></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputNumber" class="col-sm-2 control-label">№ Білету*</label>
+                        <div class="col-sm-3"><input class="form-control" id="inputNumber" type="text" value="123456" /></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputBDay" class="col-sm-2 control-label">Дата народження</label>
+                        <div class="col-sm-3"><input class="form-control" id="inputBDay" type="text" value="1988-01-28" /></div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-2 control-label">Фото</div>
+                        <div class="col-sm-3">
+                            <div>Наразі: <a href="#">student_photos/ipochaevets.jpg</a></div>
+                            <div>Очистити</div><br/>
+                            <div>Змінити: <input type="file" value="" /></div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-2 control-label">Група</div>
+                        <div class="col-sm-3">
+                            <select class="form-control">
+                                <option value="">К-14</option>
+                                <option value="">К-15</option>
+                                <option value="">К-16</option>
+                                <option value="">К-18</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-2 control-label">Додаткові нотатки</div>
+                        <div class="col-sm-3">
+                            <textarea class="form-control">текст текст</textarea>
+                        </div>
+                    </div>
+                    <div class="edit-form__btns-wrap">
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <a class="btn btn-primary" href="#">Зберегти</a> <a href="#">Скасувати</a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <!-- End Edit Form -->
+            </div>
+        </div>
+        <!-- End Main Page Content -->
+        <!-- Start Footer -->
+        <div class="row" id="footer">
+            <div class="col-xs-12">
+                &copy; 2017 Сервіс Обліку Студентів
+            </div>
+        </div>
+        <!-- End Footer -->
+    </div>
+    <!-- End Container -->
+    <!-- Javascripts Section -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+
+</html>
