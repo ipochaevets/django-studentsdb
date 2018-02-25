@@ -1,0 +1,204 @@
+{% extends 'students/base.html' %}
+
+{% load static from staticfiles %}
+
+{% block meta_title %}Облік Відвідування{% endblock meta_title %}
+
+{% block title %}Облік Відвідування{% endblock title %}
+
+{% block content %}
+<div class="text-center"><a href="#">&larr;</a> Березень 2017 <a href="#">&rarr;</a></div>
+<!-- Start Students Listing -->
+<div class="table-responsive">
+  {% if students %}
+  <table class="table table-hover table-striped">
+    <thead>
+      <tr>
+        <th>№</th>
+        <th>Студент</th>
+        <th>Ср<br/>1</th>
+        <th>Чт<br/>2</th>
+        <th>Пт<br/>3</th>
+        <th>Сб<br/>4</th>
+        <th>Нд<br/>5</th>
+        <th>Пн<br/>6</th>
+        <th>Вт<br/>7</th>
+        <th>Ср<br/>8</th>
+        <th>Чт<br/>9</th>
+        <th>Пт<br/>10</th>
+        <th>Сб<br/>11</th>
+        <th>Нд<br/>12</th>
+        <th>Пн<br/>13</th>
+        <th>Вт<br/>14</th>
+        <th>Ср<br/>15</th>
+        <th>Чт<br/>16</th>
+        <th>Пт<br/>17</th>
+        <th>Сб<br/>18</th>
+        <th>Нд<br/>19</th>
+        <th>Пн<br/>20</th>
+        <th>Вт<br/>21</th>
+        <th>Ср<br/>22</th>
+        <th>Чт<br/>23</th>
+        <th>Пт<br/>24</th>
+        <th>Сб<br/>25</th>
+        <th>Нд<br/>26</th>
+        <th>Пн<br/>27</th>
+        <th>Вт<br/>28</th>
+        <th>Ср<br/>29</th>
+        <th>Чт<br/>30</th>
+        <th>Пт<br/>31</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for student in students %}
+      <tr>
+        <td>{{ forloop.counter }}</td>
+        <td><a href="#">{{ student.last_name }} {{ student.first_name }}</a></td>
+        <td><div class="checkbox-students"><input type="checkbox" id="{{ student.id }}1" ><label for="{{ student.id }}1" class="checkbox-students__unit"></label></div></td>
+        <td><div class="checkbox-students"><input type="checkbox" id="{{ student.id }}2" ><label for="{{ student.id }}2" class="checkbox-students__unit"></label></div></td>
+        <td><div class="checkbox-students"><input type="checkbox" id="{{ student.id }}3" ><label for="{{ student.id }}3" class="checkbox-students__unit"></label></div></td>
+        <td><div class="checkbox-students"><input type="checkbox" id="{{ student.id }}4" ><label for="{{ student.id }}4" class="checkbox-students__unit"></label></div></td>
+        <td><div class="checkbox-students"><input type="checkbox" id="{{ student.id }}5" ><label for="{{ student.id }}5" class="checkbox-students__unit"></label></div></td>
+        <td><div class="checkbox-students"><input type="checkbox" id="{{ student.id }}6" ><label for="{{ student.id }}6" class="checkbox-students__unit"></label></div></td>
+        <td><div class="checkbox-students"><input type="checkbox" id="{{ student.id }}7" ><label for="{{ student.id }}7" class="checkbox-students__unit"></label></div></td>
+        <td><div class="checkbox-students"><input type="checkbox" id="{{ student.id }}8" ><label for="{{ student.id }}8" class="checkbox-students__unit"></label></div></td>
+        <td><div class="checkbox-students"><input type="checkbox" id="{{ student.id }}9" ><label for="{{ student.id }}9" class="checkbox-students__unit"></label></div></td>
+        <td><div class="checkbox-students"><input type="checkbox" id="{{ student.id }}10"><label for="{{ student.id }}10" class="checkbox-students__unit"></label></div></td>
+        <td><div class="checkbox-students"><input type="checkbox" id="{{ student.id }}11"><label for="{{ student.id }}11" class="checkbox-students__unit"></label></div></td>
+        <td><div class="checkbox-students"><input type="checkbox" id="{{ student.id }}12"><label for="{{ student.id }}12" class="checkbox-students__unit"></label></div></td>
+        <td><div class="checkbox-students"><input type="checkbox" id="{{ student.id }}13"><label for="{{ student.id }}13" class="checkbox-students__unit"></label></div></td>
+        <td><div class="checkbox-students"><input type="checkbox" id="{{ student.id }}14"><label for="{{ student.id }}14" class="checkbox-students__unit"></label></div></td>
+        <td><div class="checkbox-students"><input type="checkbox" id="{{ student.id }}15"><label for="{{ student.id }}15" class="checkbox-students__unit"></label></div></td>
+        <td><div class="checkbox-students"><input type="checkbox" id="{{ student.id }}16"><label for="{{ student.id }}16" class="checkbox-students__unit"></label></div></td>
+        <td><div class="checkbox-students"><input type="checkbox" id="{{ student.id }}17"><label for="{{ student.id }}17" class="checkbox-students__unit"></label></div></td>
+        <td><div class="checkbox-students"><input type="checkbox" id="{{ student.id }}18"><label for="{{ student.id }}18" class="checkbox-students__unit"></label></div></td>
+        <td><div class="checkbox-students"><input type="checkbox" id="{{ student.id }}19"><label for="{{ student.id }}19" class="checkbox-students__unit"></label></div></td>
+        <td><div class="checkbox-students"><input type="checkbox" id="{{ student.id }}20"><label for="{{ student.id }}20" class="checkbox-students__unit"></label></div></td>
+        <td><div class="checkbox-students"><input type="checkbox" id="{{ student.id }}21"><label for="{{ student.id }}21" class="checkbox-students__unit"></label></div></td>
+        <td><div class="checkbox-students"><input type="checkbox" id="{{ student.id }}22"><label for="{{ student.id }}22" class="checkbox-students__unit"></label></div></td>
+        <td><div class="checkbox-students"><input type="checkbox" id="{{ student.id }}23"><label for="{{ student.id }}23" class="checkbox-students__unit"></label></div></td>
+        <td><div class="checkbox-students"><input type="checkbox" id="{{ student.id }}24"><label for="{{ student.id }}24" class="checkbox-students__unit"></label></div></td>
+        <td><div class="checkbox-students"><input type="checkbox" id="{{ student.id }}25"><label for="{{ student.id }}25" class="checkbox-students__unit"></label></div></td>
+        <td><div class="checkbox-students"><input type="checkbox" id="{{ student.id }}26"><label for="{{ student.id }}26" class="checkbox-students__unit"></label></div></td>
+        <td><div class="checkbox-students"><input type="checkbox" id="{{ student.id }}27"><label for="{{ student.id }}27" class="checkbox-students__unit"></label></div></td>
+        <td><div class="checkbox-students"><input type="checkbox" id="{{ student.id }}28"><label for="{{ student.id }}28" class="checkbox-students__unit"></label></div></td>
+        <td><div class="checkbox-students"><input type="checkbox" id="{{ student.id }}29"><label for="{{ student.id }}29" class="checkbox-students__unit"></label></div></td>
+        <td><div class="checkbox-students"><input type="checkbox" id="{{ student.id }}30"><label for="{{ student.id }}30" class="checkbox-students__unit"></label></div></td>
+        <td><div class="checkbox-students"><input type="checkbox" id="{{ student.id }}31"><label for="{{ student.id }}31" class="checkbox-students__unit"></label></div></td>
+      </tr>
+      {% endfor %}
+      {% comment 'temp' %}
+      <tr>
+        <td>1</td>
+        <td>Почаєвець Іван</td>
+        <td><input type="checkbox" name="" value="" checked /></td>
+        <td><input type="checkbox" name="" value="" /></td>
+        <td><input type="checkbox" name="" value="" /></td>
+        <td><input type="checkbox" name="" value="" /></td>
+        <td><input type="checkbox" name="" value="" /></td>
+        <td><input type="checkbox" name="" value="" checked /></td>
+        <td><input type="checkbox" name="" value="" checked /></td>
+        <td><input type="checkbox" name="" value="" checked /></td>
+        <td><input type="checkbox" name="" value="" /></td>
+        <td><input type="checkbox" name="" value="" /></td>
+        <td><input type="checkbox" name="" value="" /></td>
+        <td><input type="checkbox" name="" value="" /></td>
+        <td><input type="checkbox" name="" value="" /></td>
+        <td><input type="checkbox" name="" value="" /></td>
+        <td><input type="checkbox" name="" value="" /></td>
+        <td><input type="checkbox" name="" value="" /></td>
+        <td><input type="checkbox" name="" value="" /></td>
+        <td><input type="checkbox" name="" value="" /></td>
+        <td><input type="checkbox" name="" value="" /></td>
+        <td><input type="checkbox" name="" value="" /></td>
+        <td><input type="checkbox" name="" value="" /></td>
+        <td><input type="checkbox" name="" value="" /></td>
+        <td><input type="checkbox" name="" value="" /></td>
+        <td><input type="checkbox" name="" value="" /></td>
+        <td><input type="checkbox" name="" value="" /></td>
+        <td><input type="checkbox" name="" value="" /></td>
+        <td><input type="checkbox" name="" value="" /></td>
+        <td><input type="checkbox" name="" value="" /></td>
+        <td><input type="checkbox" name="" value="" /></td>
+        <td><input type="checkbox" name="" value="" /></td>
+        <td><input type="checkbox" name="" value="" /></td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Назаренко Максим</td>
+        <td><input type="checkbox" name="" value="" checked /></td>
+        <td><input type="checkbox" name="" value="" /></td>
+        <td><input type="checkbox" name="" value="" /></td>
+        <td><input type="checkbox" name="" value="" /></td>
+        <td><input type="checkbox" name="" value="" /></td>
+        <td><input type="checkbox" name="" value="" checked /></td>
+        <td><input type="checkbox" name="" value="" checked /></td>
+        <td><input type="checkbox" name="" value="" checked /></td>
+        <td><input type="checkbox" name="" value="" /></td>
+        <td><input type="checkbox" name="" value="" /></td>
+        <td><input type="checkbox" name="" value="" /></td>
+        <td><input type="checkbox" name="" value="" /></td>
+        <td><input type="checkbox" name="" value="" /></td>
+        <td><input type="checkbox" name="" value="" /></td>
+        <td><input type="checkbox" name="" value="" /></td>
+        <td><input type="checkbox" name="" value="" /></td>
+        <td><input type="checkbox" name="" value="" checked /></td>
+        <td><input type="checkbox" name="" value="" /></td>
+        <td><input type="checkbox" name="" value="" /></td>
+        <td><input type="checkbox" name="" value="" checked /></td>
+        <td><input type="checkbox" name="" value="" /></td>
+        <td><input type="checkbox" name="" value="" /></td>
+        <td><input type="checkbox" name="" value="" /></td>
+        <td><input type="checkbox" name="" value="" /></td>
+        <td><input type="checkbox" name="" value="" /></td>
+        <td><input type="checkbox" name="" value="" /></td>
+        <td><input type="checkbox" name="" value="" checked /></td>
+        <td><input type="checkbox" name="" value="" /></td>
+        <td><input type="checkbox" name="" value="" /></td>
+        <td><input type="checkbox" name="" value="" /></td>
+        <td><input type="checkbox" name="" value="" /></td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Тишко Дмитро</td>
+        <td><input type="checkbox" name="" value="" checked /></td>
+        <td><input type="checkbox" name="" value="" /></td>
+        <td><input type="checkbox" name="" value="" /></td>
+        <td><input type="checkbox" name="" value="" /></td>
+        <td><input type="checkbox" name="" value="" /></td>
+        <td><input type="checkbox" name="" value="" checked /></td>
+        <td><input type="checkbox" name="" value="" checked /></td>
+        <td><input type="checkbox" name="" value="" checked /></td>
+        <td><input type="checkbox" name="" value="" /></td>
+        <td><input type="checkbox" name="" value="" /></td>
+        <td><input type="checkbox" name="" value="" /></td>
+        <td><input type="checkbox" name="" value="" /></td>
+        <td><input type="checkbox" name="" value="" /></td>
+        <td><input type="checkbox" name="" value="" /></td>
+        <td><input type="checkbox" name="" value="" /></td>
+        <td><input type="checkbox" name="" value="" /></td>
+        <td><input type="checkbox" name="" value="" /></td>
+        <td><input type="checkbox" name="" value="" /></td>
+        <td><input type="checkbox" name="" value="" /></td>
+        <td><input type="checkbox" name="" value="" /></td>
+        <td><input type="checkbox" name="" value="" /></td>
+        <td><input type="checkbox" name="" value="" /></td>
+        <td><input type="checkbox" name="" value="" checked /></td>
+        <td><input type="checkbox" name="" value="" /></td>
+        <td><input type="checkbox" name="" value="" /></td>
+        <td><input type="checkbox" name="" value="" /></td>
+        <td><input type="checkbox" name="" value="" /></td>
+        <td><input type="checkbox" name="" value="" /></td>
+        <td><input type="checkbox" name="" value="" checked /></td>
+        <td><input type="checkbox" name="" value="" /></td>
+        <td><input type="checkbox" name="" value="" /></td>
+      </tr>
+      {% endcomment %}
+    </tbody>
+  </table>
+  {% else %}
+  <p>Поки що не має графіку.</p>
+  {% endif %}
+</div>
+<!-- End Students Listing -->
+{% endblock content %}

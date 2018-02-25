@@ -16,7 +16,7 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
-from students.views import students, groups
+from students.views import students, groups, journal
 
 urlpatterns = [
 
@@ -33,7 +33,7 @@ urlpatterns = [
     url(r'^groups/(?P<gid>\d+)/delete/$', groups.groups_delete, name='groups_delete'),
 
     # Journal
-    # url(r'journals/$', journal.journals_list, name='journals'),
+    url(r'journal/$', journal.journals_list, name='journals'),
 
     # Admin
     url(r'^admin/', admin.site.urls),
