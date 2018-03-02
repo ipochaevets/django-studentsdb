@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'students',
 ]
 
-MIDDLEWARE = [
+MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -127,3 +127,6 @@ STATIC_URL = '/static/'
 #     "django.core.context_processors.request",
 #     "studentsdb.context_processors.students_proc",
 # )
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, '..', 'media')
