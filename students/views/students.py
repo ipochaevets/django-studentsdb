@@ -45,7 +45,26 @@ def students_list(request):
     except EmptyPage:
         # if page is out of range (e.g. 9999), deliver last page of resuls.
         students = paginator.page(paginator.num_pages)
-
+    """
+    # my pagination
+    students_count = Student.objects.all().count()
+    if students_count % 3:
+        total_pages = (students_count / 3) + 1
+    else:
+        total_pages = students_count / 3
+    page_tmp = request.GET.get('page', '0')
+    try:
+        page = int(page_tmp)
+        if page < 1:
+            page = 1
+    except ValueError:
+        page = 1
+    if page > total_pages:
+        page = total_pages
+    limit = 3 * page
+    offset = limit - 3
+    students = students[offset:limit]
+    """
     context = {'students': students}
     return render(request, 'students/students_list.html', context)
 
