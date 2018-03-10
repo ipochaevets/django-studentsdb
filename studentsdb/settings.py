@@ -10,7 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 from django.conf import global_settings
-from .db import DATABASES
+from studentsdb.db import DATABASES
 
 import os
 
