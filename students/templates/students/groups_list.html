@@ -14,39 +14,53 @@
 {% if groups %}
 <!-- Start Groups Listing -->
 <table class="table table-hover table-striped">
+  {% with order_by=request.GET.order_by reverse=request.GET.reverse %}
   <thead>
       <tr>
-          <th><a href="#">№</a></th>
-          <th><a href="#">Назва &uarr;</a></th>
-          <th><a href="#">Староста</a></th>
+          <!-- <th><a href="#">№</a></th> -->
+          <th><a href="{% url 'groups' %}?order_by=id{% if order_by == 'id' and reverse != '1' %}&amp;reverse=1{% endif %}">№ {% if order_by == 'id' and reverse != '1' %}&uarr;{% elif order_by == 'id' and reverse == '1' %}&darr;{% endif %}</a></th>
+          <th><a href="{% url 'groups' %}?order_by=title{% if reverse != '1' %}{% if order_by == 'title' or order_by == '' %}&amp;reverse=1{% endif %}{% endif %}">
+            Назва
+            {% if order_by == '' %}&uarr;
+            {% elif order_by == 'title' and reverse != '1' %}&uarr;
+            {% elif order_by == 'title' and reverse == '1' %}&darr;
+            {% endif %}
+          </a></th>
+          <th><a href="{% url 'groups' %}?order_by=leader{% if reverse != '1' %}{% if order_by == 'leader' or order_by == '' %}&amp;reverse=1{% endif %}{% endif %}">
+            Староста
+            {% if order_by == 'leader' and reverse != '1' %}&uarr;
+            {% elif order_by == 'leader' and reverse == '1' %}&darr;
+            {% endif %}
+          </a></th>
           <th>Дії</th>
       </tr>
   </thead>
-    <tbody>
-        {% for group in groups %}
-        <tr>
-            <td>{{ forloop.counter }}</td>
-            <td><a title="Редагувати" href="{% url 'groups_edit' group.id %}">{{ group.name }}</a></td>
-            <td><a title="Переглянути" href="{% url "students_edit" group.leader.id %}">{{ group.leader.name }}</a></td>
-            <td>
-                <div class="dropdown">
-                    <button class="btn btn-default dropdown-toggl" type="button" data-toggle="dropdown">Дія <span class="caret"></span></button>
-                    <ul class="dropdown-menu" role="menu">
-                        <li role="presentation">
-                            <a role="menuitem" tabindex="-1" href="{% url 'groups_edit' group.id %}">Редагувати</a>
-                        </li>
-                        <li role="presentation">
-                            <a role="menuitem" tabindex="-1" href="{% url 'groups_delete' group.id %}">Видалити</a>
-                        </li>
-                    </ul>
-                </div>
-            </td>
-        </tr>
-        {% endfor %}
-    </tbody>
+  {% endwith %}
+  <tbody>
+      {% for group in groups %}
+      <tr>
+          <td>{{ forloop.counter }}</td>
+          <td><a title="Редагувати" href="{% url 'groups_edit' group.id %}">{{ group.title }}</a></td>
+          <td>{% if group.leader %}<a title="Редагувати" href="{% url 'groups_edit' group.id %}">{{ group.leader }}</a>{% endif %}</td>
+          <td>
+              <div class="dropdown">
+                  <button class="btn btn-default dropdown-toggl" type="button" data-toggle="dropdown">Дія <span class="caret"></span></button>
+                  <ul class="dropdown-menu" role="menu">
+                      <li role="presentation">
+                          <a role="menuitem" tabindex="-1" href="{% url 'groups_edit' group.id %}">Редагувати</a>
+                      </li>
+                      <li role="presentation">
+                          <a role="menuitem" tabindex="-1" href="{% url 'groups_delete' group.id %}">Видалити</a>
+                      </li>
+                  </ul>
+              </div>
+          </td>
+      </tr>
+      {% endfor %}
+  </tbody>
 </table>
-<!-- End Students Listing -->
-{% include './includes/pagination.html' %}
+<!-- End Groups Listing -->
+{% include './includes/pagination_groups.html' %}
 {% else %}
 <p>Поки немає груп у базі.</p>
 {% endif %}

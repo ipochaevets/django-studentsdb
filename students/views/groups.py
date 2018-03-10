@@ -2,37 +2,32 @@
 
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
-# Groups views
+from ..models import Group
+
+# Group views
 def groups_list(request):
-    groups = (
-        {
-            'id': 1,
-            'name': u'К-16',
-            'leader': {
-                'id': 2,
-                'name': u'Маестро Олександр'
-            }
-        },
-        {
-            'id': 2,
-            'name': u'К-15',
-            'leader': {
-                'id': 1,
-                'name': u'Почаєвець Іван'
-            }
-        },
-        {
-            'id': 3,
-            'name': u'К-14',
-            'leader': {
-                'id': 3,
-                'name': u'Казковий Котигорошко'
-            }
-        },
-    )
-    # return HttpResponse('<h1>Groups Listing</h1>')
-    # return render(request, 'students/groups_list.html', {'groups': groups})
+    groups = Group.objects.all().order_by('title')
+    # try to order groups list
+    order_by = request.GET.get('order_by', '')
+    if order_by in ('title', 'leader', 'id'):
+        groups = groups.order_by(order_by)
+        if request.GET.get('reverse', '') == '1':
+            groups = groups.reverse()
+
+    # paginate groups
+    paginator = Paginator(groups, 3)
+    page = request.GET.get('page')
+    try:
+        groups = paginator.page(page)
+    except PageNotAnInteger:
+        # If page is not an integer, deliver first page.
+        groups = paginator.page(1)
+    except EmptyPage:
+        # if page is out of range (e.g. 9999), deliver last page of resuls.
+        groups = paginator.page(paginator.num_pages)
+
     context = {'groups': groups}
     return render(request, 'students/groups_list.html', context)
 
